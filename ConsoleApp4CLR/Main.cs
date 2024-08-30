@@ -41,6 +41,7 @@ class MainClass
                     Console.WriteLine("Your color is unknown!");
                     break;
             }
+            t++;
         }
         while (t < 3);
 
