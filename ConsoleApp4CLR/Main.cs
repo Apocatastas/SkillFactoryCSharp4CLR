@@ -12,7 +12,7 @@ class MainClass
 
 
 
-        (string FirstName, string LastName, string Login, int LoginLength, bool IsHasPet, int Age, int[] FavColors ) User;
+        (string FirstName, string LastName, string Login, int LoginLength, bool IsHasPet, int Age, string[] FavColors ) User;
 
         Console.Write("Введите имя: ");
         User.FirstName = Console.ReadLine();
@@ -32,6 +32,18 @@ class MainClass
             {
             User.IsHasPet = false;
             }
+
+        Console.Write("Введите возраст: ");
+        User.Age = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Введите ваши любимые три цвета\n");
+        User.FavColors = new string[3];
+        Console.Write("#1: ");
+        User.FavColors[0] = Console.ReadLine();
+        Console.Write("#2: ");
+        User.FavColors[1] = Console.ReadLine();
+        Console.Write("#3: ");
+        User.FavColors[2] = Console.ReadLine();
+
 
 
         Console.ReadKey();
