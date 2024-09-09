@@ -21,6 +21,18 @@ class MainClass
         Console.Write("Введите логин: ");
         User.Login = Console.ReadLine();
         User.LoginLength = User.Login.Length;
+        Console.Write("Есть ли у вас животные (Да/Нет): ");
+        var pets = Console.ReadLine();
+        if (Convert.ToString(pets) == "Да")
+            {
+            User.IsHasPet = true;
+            }
+
+        else
+            {
+            User.IsHasPet = false;
+            }
+
 
         Console.ReadKey();
 
