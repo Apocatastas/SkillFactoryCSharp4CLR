@@ -1,20 +1,43 @@
 ﻿using System;
+using System.Xml.Linq;
 
 class MainClass
 {
+    enum PetType 
+    {
+        кошка,
+        рыбка,
+        хомячок
+    }
+
+
     public static void Main(string[] args)
     {
-        var (name, age) = ("Satan", 666);
-        Console.WriteLine("Ваше имя: {0}", name);
-        Console.WriteLine("Ваш возраст: {0}", age);
+
+        (string Name, string Type, double Age, int NameCount) Pet;
 
         Console.Write("Введите имя: ");
-        name = Console.ReadLine();
-        Console.Write("Введите возраст с цифрами: ");
-        age = Convert.ToInt32(Console.ReadLine());
+        Pet.Name = Console.ReadLine();
 
-        Console.WriteLine("Ваше имя: {0}", name);
-        Console.WriteLine("Ваш возраст: {0}", age);
+
+        do
+        {
+            Console.Write("Введите тип (кошка, рыбка или хомячок): ");
+            Pet.Type = Console.ReadLine();
+        }
+        while
+           ((Convert.ToString(Pet.Type) != Convert.ToString(PetType.кошка)) &&
+            (Convert.ToString(Pet.Type) != Convert.ToString(PetType.рыбка)) &&
+            (Convert.ToString(Pet.Type) != Convert.ToString(PetType.хомячок)));
+
+
+        Console.Write("Введите возраст с цифрами: ");
+        Pet.Age = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Имя питомца: {0}", Pet.Name);
+        Console.WriteLine("Тип питомца: {0}", Pet.Type);
+        Console.WriteLine("Возраст питомца: {0}", Pet.Age);
+        Console.WriteLine("Длина имени питомца: {0}", Pet.Name.Length);
 
         Console.ReadKey();
 
