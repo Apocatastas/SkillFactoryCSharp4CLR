@@ -14,7 +14,14 @@ class MainClass
 
         (string FirstName, string LastName, string Login, int LoginLength, bool IsHasPet, int Age, int[] FavColors ) User;
 
-       
+        Console.Write("Введите имя: ");
+        User.FirstName = Console.ReadLine();
+        Console.Write("Введите фамилию: ");
+        User.LastName = Console.ReadLine();
+        Console.Write("Введите логин: ");
+        User.Login = Console.ReadLine();
+
+
         Console.ReadKey();
 
     }
